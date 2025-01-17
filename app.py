@@ -5,8 +5,8 @@ import os
 # Import profiling and PyCaret
 from ydata_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
-from pycaret.classification import setup as cls_setup, compare_models as cls_compare, save_model as cls_save,pull
-from pycaret.regression import setup as reg_setup, compare_models as reg_compare, save_model as reg_save,pull
+from pycaret.classification import setup as cls_setup, compare_models as cls_compare, save_model as cls_save
+from pycaret.regression import setup as reg_setup, compare_models as reg_compare, save_model as reg_save
 
 # Sidebar Navigation
 with st.sidebar:
@@ -51,25 +51,15 @@ if choice == "ML":
     if st.button("Train Model"):
         if task == "classification":
             cls_setup(df, target=target)
-            setup_df = pull()
-            st.info("This is ML Experiment Settings (Classification)")
-            st.dataframe(setup_df)
             best_model = cls_compare()
-            compare_df = pull()
             st.info("This is the Best Model (Classification)")
-            st.dataframe(compare_df)
-            best_model
+            st.dataframe(pull())  # Pull only once after model comparison
             cls_save(best_model, "best_model")
         elif task == "regression":
             reg_setup(df, target=target)
-            setup_df = pull()
-            st.info("This is ML Experiment Settings (Regression)")
-            st.dataframe(setup_df)
             best_model = reg_compare()
-            compare_df = pull()
             st.info("This is the Best Model (Regression)")
-            st.dataframe(compare_df)
-            best_model
+            st.dataframe(pull())  # Pull only once after model comparison
             reg_save(best_model, "best_model")
 
 # Download Page
