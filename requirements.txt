@@ -1,3 +1,4 @@
+python==3.11
 ydata-profiling
 streamlit
 streamlit_pandas_profiling
