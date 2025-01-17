@@ -1,1 +1,3 @@
-echo "ydata-profiling==4.x.x" >> requirements.txt
+ydata-profiling
+pycaret
+streamlit
