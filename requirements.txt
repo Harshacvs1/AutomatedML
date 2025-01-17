@@ -1,0 +1,1 @@
+echo "ydata-profiling==4.x.x" >> requirements.txt
