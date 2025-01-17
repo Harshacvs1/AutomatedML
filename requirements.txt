@@ -1,5 +1,4 @@
-python
 ydata-profiling
-pycaret==3.3
+pycaret
 streamlit
 streamlit_pandas_profiling
