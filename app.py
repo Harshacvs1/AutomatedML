@@ -5,8 +5,8 @@ import os
 # Import profiling and PyCaret
 from ydata_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
-from pycaret.classification import setup as cls_setup, compare_models as cls_compare, save_model as cls_save
-from pycaret.regression import setup as reg_setup, compare_models as reg_compare, save_model as reg_save
+from pycaret.classification import setup as cls_setup, compare_models as cls_compare, save_model as cls_save,pull
+from pycaret.regression import setup as reg_setup, compare_models as reg_compare, save_model as reg_save,pull
 
 # Sidebar Navigation
 with st.sidebar:
